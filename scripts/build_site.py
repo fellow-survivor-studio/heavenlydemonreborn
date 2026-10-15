@@ -42,11 +42,11 @@ def build(out):
         target = out / page["slug"] / "index.html"
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(html + "\n", encoding="utf-8", newline="\n")
-    (out / ".nojekyll").write_text("", encoding="utf-8")
-    (out / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {BASE}sitemap.xml\n", encoding="utf-8")
+    (out / ".nojekyll").write_text("", encoding="utf-8", newline="\n")
+    (out / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {BASE}sitemap.xml\n", encoding="utf-8", newline="\n")
     urls = "".join(f'<url><loc>{BASE}{p["slug"] + "/" if p["slug"] else ""}</loc><lastmod>{site["published"]}</lastmod></url>' for p in pages)
-    (out / "sitemap.xml").write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>\n', encoding="utf-8")
-    (out / "404.html").write_text(f'<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>페이지를 찾을 수 없습니다 | 환생천마</title><link rel="stylesheet" href="{BASE}styles.css"></head><body><main class="not-found"><p class="eyebrow">404</p><h1>페이지를 찾을 수 없습니다.</h1><p>주소가 변경되었거나 존재하지 않는 페이지입니다.</p><a class="button" href="{BASE}">정책 및 고객지원 홈으로</a></main></body></html>\n', encoding="utf-8")
+    (out / "sitemap.xml").write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>\n', encoding="utf-8", newline="\n")
+    (out / "404.html").write_text(f'<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>페이지를 찾을 수 없습니다 | 환생천마</title><link rel="stylesheet" href="{BASE}styles.css"></head><body><main class="not-found"><p class="eyebrow">404</p><h1>페이지를 찾을 수 없습니다.</h1><p>주소가 변경되었거나 존재하지 않는 페이지입니다.</p><a class="button" href="{BASE}">정책 및 고객지원 홈으로</a></main></body></html>\n', encoding="utf-8", newline="\n")
     print(f"Built {len(pages)} pages plus 404, sitemap and robots.")
 
 
