@@ -46,7 +46,9 @@ Reel Nest와 동일하게 **Deploy from a branch → `main` → `/ (root)`**를 
 
 ## Cloudflare 동시 운영
 
-GitHub Pages와 함께 Cloudflare Workers 정적 호스팅을 준비하고 있습니다. Cloudflare가 이 저장소에 연결되면 같은 `main` 푸시가 양쪽에 배포됩니다.
+2026-11-06부터 `https://fellowsurvivor.com/heavenlydemonreborn/`은 Cloudflare Workers가 제공합니다. GitHub Pages도 켜 두므로 `main` 푸시는 양쪽에 배포되고, `github.io` 주소는 계속 대표 주소로 넘어갑니다.
+
+GitHub Pages로 되돌리기: Cloudflare 화면에서 `fellowsurvivor.com/heavenlydemonreborn` 경로 규칙을 지우면 즉시 돌아가고, `wrangler.jsonc`에서도 같은 규칙을 지워야 다음 배포 때 다시 켜지지 않습니다.
 
 - `wrangler.jsonc`: Cloudflare 프로젝트 `fellowsurvivor-heavenlydemonreborn`의 설정입니다. 시험 주소는 `https://new.fellowsurvivor.com/heavenlydemonreborn/`입니다.
 - `scripts/cloudflare-build.sh`: 배포 때마다 자동으로 실행되어 사이트 파일을 `.cf-dist/heavenlydemonreborn/`에 복사하므로 `/heavenlydemonreborn/` 경로로 게시됩니다. 원문·빌드 스크립트·내부 문서처럼 사이트 페이지가 아닌 파일은 Cloudflare에 게시하지 않습니다. `.cf-dist/`와 `.wrangler/`는 빌드 결과라 Git에서 제외합니다.
