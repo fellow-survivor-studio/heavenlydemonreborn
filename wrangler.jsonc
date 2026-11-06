@@ -16,6 +16,9 @@
   "previews": {},
   // Test address while GitHub Pages still serves fellowsurvivor.com.
   "routes": [
-    { "pattern": "new.fellowsurvivor.com/heavenlydemonreborn*", "zone_name": "fellowsurvivor.com" }
+    // Exact /heavenlydemonreborn (redirects to /heavenlydemonreborn/) and everything under /heavenlydemonreborn/ only, so the main
+    // site's files that merely start with "heavenlydemonreborn" (e.g. /heavenlydemonreborn.css) stay with the main site.
+    { "pattern": "new.fellowsurvivor.com/heavenlydemonreborn", "zone_name": "fellowsurvivor.com" },
+    { "pattern": "new.fellowsurvivor.com/heavenlydemonreborn/*", "zone_name": "fellowsurvivor.com" }
   ]
 }
