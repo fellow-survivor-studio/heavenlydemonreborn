@@ -44,6 +44,14 @@ Reel Nest와 동일하게 **Deploy from a branch → `main` → `/ (root)`**를 
 
 무료 요금제의 비공개 저장소는 Pages를 사용할 수 없으므로 공개 저장소 또는 비공개 Pages를 지원하는 요금제가 필요합니다. 저장소 공개 여부는 소유자가 결정합니다. 공개 저장소에는 공개용 문서·사이트 코드만 보관하고 Firebase 서비스 계정, 결제 검증 키, 실제 이용자 데이터 등을 넣지 않습니다.
 
+## Cloudflare 동시 운영
+
+GitHub Pages와 함께 Cloudflare Workers 정적 호스팅을 준비하고 있습니다. Cloudflare가 이 저장소에 연결되면 같은 `main` 푸시가 양쪽에 배포됩니다.
+
+- `wrangler.jsonc`: Cloudflare 프로젝트 `fellowsurvivor-heavenlydemonreborn`의 설정입니다. `base_path`로 `/heavenlydemonreborn/` 하위 경로에 게시하며, 시험 주소는 `https://new.fellowsurvivor.com/heavenlydemonreborn/`입니다.
+- `.assetsignore`: 원문·빌드 스크립트·내부 문서처럼 사이트 페이지가 아닌 파일은 Cloudflare에 게시하지 않습니다.
+- Google Play에 등록한 `github.io` 주소는 전환 후에도 GitHub Pages가 대표 주소로 넘겨주도록 유지합니다.
+
 ## 운영 시 주의할 점
 
 - 게임 출시 전에 최종 시행일·이용등급·통신판매업 신고 사항·상품 조건·실제 확률·SDK 처리 조건을 확정합니다.
