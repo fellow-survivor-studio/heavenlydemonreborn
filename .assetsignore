@@ -1,0 +1,10 @@
+# Repository tooling that Cloudflare does not publish (source, generator, internal docs, not site pages).
+.git
+.gitignore
+.gitattributes
+.assetsignore
+wrangler.jsonc
+README.md
+content/
+docs/
+scripts/
