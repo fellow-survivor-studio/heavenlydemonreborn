@@ -1,5 +1,11 @@
 # 환생천마 정책 및 고객지원
 
+> **이 저장소는 보관용입니다(2026-11-06).** 환생천마 정책·고객지원 사이트는 회사 홈페이지 저장소
+> [`fellow-survivor-studio.github.io`](https://github.com/fellow-survivor-studio/fellow-survivor-studio.github.io)의
+> `heavenlydemonreborn/`(게시 페이지)와 `sources/heavenlydemonreborn/`(원문·생성 스크립트)로 옮겼습니다.
+> 공개 주소는 **https://fellowsurvivor.com/heavenlydemonreborn/** 이며, 이전 `github.io` 주소도 그 주소로 넘어갑니다.
+> 이 저장소의 GitHub Pages와 Cloudflare 배포는 꺼져 있습니다. 수정은 새 위치에서 하세요.
+
 한국 Google Play 출시를 위한 공식 정책 사이트입니다. Reel Nest와 같은 정적 HTML 방식이며, 게임과 관계없는 Reel Nest의 다운로드·구독 조항은 사용하지 않습니다.
 
 공개 주소: **https://fellow-survivor-studio.github.io/heavenlydemonreborn/**
