@@ -48,8 +48,8 @@ Reel Nest와 동일하게 **Deploy from a branch → `main` → `/ (root)`**를 
 
 GitHub Pages와 함께 Cloudflare Workers 정적 호스팅을 준비하고 있습니다. Cloudflare가 이 저장소에 연결되면 같은 `main` 푸시가 양쪽에 배포됩니다.
 
-- `wrangler.jsonc`: Cloudflare 프로젝트 `fellowsurvivor-heavenlydemonreborn`의 설정입니다. `base_path`로 `/heavenlydemonreborn/` 하위 경로에 게시하며, 시험 주소는 `https://new.fellowsurvivor.com/heavenlydemonreborn/`입니다.
-- `.assetsignore`: 원문·빌드 스크립트·내부 문서처럼 사이트 페이지가 아닌 파일은 Cloudflare에 게시하지 않습니다.
+- `wrangler.jsonc`: Cloudflare 프로젝트 `fellowsurvivor-heavenlydemonreborn`의 설정입니다. 시험 주소는 `https://new.fellowsurvivor.com/heavenlydemonreborn/`입니다.
+- `scripts/cloudflare-build.sh`: 배포 때마다 자동으로 실행되어 사이트 파일을 `.cf-dist/heavenlydemonreborn/`에 복사하므로 `/heavenlydemonreborn/` 경로로 게시됩니다. 원문·빌드 스크립트·내부 문서처럼 사이트 페이지가 아닌 파일은 Cloudflare에 게시하지 않습니다. `.cf-dist/`와 `.wrangler/`는 빌드 결과라 Git에서 제외합니다.
 - Google Play에 등록한 `github.io` 주소는 전환 후에도 GitHub Pages가 대표 주소로 넘겨주도록 유지합니다.
 
 ## 운영 시 주의할 점
